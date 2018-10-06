@@ -49,6 +49,7 @@ app.post( '/sms', ( req, res ) => {
 
   ///////////////////////////////////////////////////
   /// Structure message responses based on SMS count!
+  /// * Edit to customize conversation flow, matched up w/ text in custom_messages.json
 
   if( smsCount == 0 ) {
     

@@ -1,2 +1,2 @@
-config.json
-google_spreadsheet_credentials.json
+app/config.json
+app/google_spreadsheet_credentials.json
