@@ -1,0 +1,12 @@
+ {
+	"text": {
+		"text-intro": "Hi! I'm learning about our new workplace. Specifically, I'm interested in how often you aren't able to find what you need. Whenever you can't find something, text me! So, %s",
+		"text-followup": "I'm sorry to hear that. But, it has been noted! If you have a few more seconds, %s",
+  		"text-goodbye": "Got it, thanks! We're continuously trying to improve your experience in the workplace so we appreciate your feedback. Have a great day!",
+		"text-ignore": "We love feedback! But to better manage human-robot relations, please wait 30 minutes before sending any more. Thanks!"
+	},
+	"questions": {
+		"question-1": "what can't you find right now?",
+		"question-2": "can you tell me a little bit more about what activity you are trying to accomplish?"
+	}
+}
