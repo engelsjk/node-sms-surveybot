@@ -9,7 +9,7 @@ Oddly enough, this was my second mini-project prototyping an automated service i
 # SurveyBot
 Enter SurveyBot! It's a Node.js/Express app that sends survey questions as SMS messages using Twilio and then records responses in a Google Spreadsheet. It can be quickly configured and deployed to roll out a fast, simple and interactive survey to any audience.  
 
-![](images/surveybot.png)
+<img src="images/surveybot.png" width="350px">
 
 To keep track of where it is in a conversation flow and send the right questions and record the corresponding answers, it uses Express sessions and a (painfully) simple message counter. 
 
