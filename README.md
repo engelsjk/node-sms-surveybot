@@ -7,7 +7,11 @@ I was challenged by my partner to find a way to record survey questions for user
 Oddly enough, this was my second mini-project prototyping an automated service in the field of workplace design, the [first one]([](https://github.com/engelsjk/web-demo-density-rooms)) being a web app showing data of room occupancy using the [density.io](https://www.density.io/) API. 
 
 # SurveyBot
-Enter SurveyBot! It's a Node.js/Express app that sends survey questions as SMS messages using Twilio and then records responses in a Google Spreadsheet. To keep track of where it is in a conversation flow and send the right questions and record the corresponding answers, it uses Express sessions and a (painfully) simple message counter. 
+Enter SurveyBot! It's a Node.js/Express app that sends survey questions as SMS messages using Twilio and then records responses in a Google Spreadsheet. It can be quickly configured and deployed to roll out a fast, simple and interactive survey to any audience.  
+
+![](images/surveybot.png)
+
+To keep track of where it is in a conversation flow and send the right questions and record the corresponding answers, it uses Express sessions and a (painfully) simple message counter. 
 
 The idea here is that you could deploy a really simple automated survey system with relatively little overhead. While there are paid services out there that do this, this is for people who want to go the simple, quick and custom route.
 
@@ -34,7 +38,9 @@ I pretty followed their instructions to set up the Google Spreadsheet updating f
 
 The only other tricky thing to keep in mind is make sure that the key names of the object you send to the addRow function match exactly with the header names in your Google Spreadsheet. That being said, I wasted a lot of time troubleshooting callback errors in the `google-spreadsheet` package because I mixed up function calls between a 'document' and a 'sheet', so uhhh don't do that.
 
-Assuming you've got your row update object key names right, your credential file all lined up and the right Google Spreadsheet ID, you should be good to go! You could test this part using direct function calls, or you can test it once you get the Node.js app server up and running.
+Assuming you've got your row update object key names right, your credential file all lined up and the right Google Spreadsheet ID, you should be good to go! You could test this part using direct function calls, or you can test it once you get the Node.js app server up and running. Either way, you should be able to watch your spreadsheet update in real-time when you reply to the SMS questions (after you have Twilio setup).
+
+![](images/survey-data.png)
 
 # Running Locally (without Twilio)
 To run this service locally, just do the standard...
@@ -61,7 +67,7 @@ I'm not going to go into the full setup of getting a phone number with Twilio an
 
 For this project, we're just concerned with setting up a TwiML app. The best place to start is Twilip's support page, [How Do I Create a TwiML App?](https://support.twilio.com/hc/en-us/articles/223180928-How-Do-I-Create-a-TwiML-App-). 
 
-After that, all you need to do is to copy your ngrok URL (e.g. https://db3ea4ea.ngrok.io/sms) into the Messaging Request URL box, making sure that HTTP POST is selected.
+After that, all you need to do is to copy your ngrok URL (e.g. http://db3ea4ea.ngrok.io/sms) into the Messaging Request URL box, making sure that HTTP POST is selected. I should note that I struggled to get everything working when using an ngrok HTTPS URL, but it seemed to work fine in HTTP.
 
 And finally, just make sure that the TwiML app you just created is properly [linked to your Twilio phone number](https://support.twilio.com/hc/en-us/articles/223136047-Configuring-Phone-Numbers-to-Receive-SMS-Messages#twimlbin). 
 
