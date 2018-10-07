@@ -80,7 +80,8 @@ app.post( '/sms', ( req, res ) => {
 
     // Ignore
     message1 = custom_messages['text']['text-ignore'];
-
+    let session_expiration_min = session_expiration_ms / 1000 / 60;
+    message1 = message1.replace( '%s', session_expiration_min );
     response.message( message1 );
 
   }
