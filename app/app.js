@@ -13,7 +13,7 @@ const MessagingResponse = require( 'twilio' ).twiml.MessagingResponse;
 /// INPUTS
 
 const port = 3000; 
-const session_expiration_ms = 1800000;
+const session_expiration_ms = 900000;
 
 ////////////////////////////////////
 /// APP
