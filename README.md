@@ -1,5 +1,5 @@
 # node-sms-surveybot
-This was a one-day challenge to build out a service that sends out custom SMS surveys and uploads responses to Google Spreadsheets using Node, Twilio and ngrok/AWS. It builds on my love for all things SMS and Twilio, with some prior experience of building out simple Node.js/Express services. 
+This was a one-day challenge to build out a service that sends out custom SMS surveys and uploads responses to Google Spreadsheets using Node.js, Twilio and ngrok/AWS. It builds on my love for all things SMS and Twilio, with some prior experience of building out simple Node.js/Express services. 
 
 # Introduction
 I was challenged by my partner to find a way to record survey questions for users in a workplace situation, to help someone trying to find their way around or not being able to find something. The scope of the project was to build out an automated survey system that would ask the user a couple of questions about their current situation and record their responses in a Google Spreadsheet for later analysis. 
