@@ -15,17 +15,19 @@ The idea here is that you could deploy a really simple automated survey system w
 
 To setup SurveyBot, you'll need to do the following... 
 
-* Download this repo
+* Download this repo:
 
 `git clone https://github.com/engelsjk/node-sms-surveybot`
  
 * Create a *config.json* file that looks like this:
+
 `
 {
 	"SESSION_SECRET": "something-secret",
 	"GOOGLE_SHEET_ID": "googly-id"
 }
 `
+
 * Create a *google_spreadsheet_credentials.json* file (see below)
 * Set up a Twilio account, get a phone number and create a TwiML app
 * Follow the instructions below!
