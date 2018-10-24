@@ -19,7 +19,7 @@ To setup SurveyBot, you'll need to do the following...
 
 `git clone https://github.com/engelsjk/node-sms-surveybot`
  
-* Create a *config.json* file that looks like this:
+* In the *app* folder, create a *config.json* file that looks like this:
 
 `
 {
@@ -28,7 +28,7 @@ To setup SurveyBot, you'll need to do the following...
 }
 `
 
-* In the *app* folder, create a *google_spreadsheet_credentials.json* file (see below)
+* Still in the *app* folder, create a *google_spreadsheet_credentials.json* file (see below)
 * Set up a Twilio account, get a phone number and create a TwiML app
 * Follow the instructions below!
 
