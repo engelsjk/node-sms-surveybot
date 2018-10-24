@@ -14,6 +14,11 @@ Enter SurveyBot! It's a Node.js/Express app that sends survey questions as SMS m
 The idea here is that you could deploy a really simple automated survey system with relatively little overhead. While there are paid services out there that do this, this is for people who want to go the simple, quick and custom route.
 
 To setup SurveyBot, you'll need to do the following... 
+
+* Download this repo
+
+`git clone https://github.com/engelsjk/node-sms-surveybot`
+ 
 * Create a *config.json* file that looks like this:
 `
 {
@@ -21,26 +26,27 @@ To setup SurveyBot, you'll need to do the following...
 	"GOOGLE_SHEET_ID": "googly-id"
 }
 `
-* Create a *google_spreadsheet_credentials.json* (see below)
+* Create a *google_spreadsheet_credentials.json* file (see below)
 * Set up a Twilio account, get a phone number and create a TwiML app
 * Follow the instructions below!
 
-Other than that, you can customize the survey questions, data recorded in the Google Spreadsheet, etc but that requires a bit more editing of code. If you want to stick to a two question survey and only record the question and answer in your spreadsheet, you can just edit the copy text in *custom_message.json*. Beyond that, you'll have to start changing code in *app.js* and *spreadsheet.js*. 
+Other than that, you can customize the survey questions, data you want recorded in the Google Spreadsheet, etc but that requires a bit more editing of code. If you want to stick to a two question survey and only record the question and answer in your spreadsheet, you can just edit the copy text in *custom_message.json*. Beyond that, you'll have to start changing code in *app.js* and *spreadsheet.js*. 
 
-For more information on how Google Spreadsheet editing was incorporated, how to run this Node.js app (locally, using ngrok and then on AWS EC2), and finally how to get it set up on Twilio, see below!
+For more information on how Google Spreadsheet editing was incorporated, how to run this Node.js app (locally, using ngrok and then on AWS EC2), and how to get it set up on Twilio, see below!
 
 # Google Spreadsheets 
 As usual, Twilio has some great support documentation and, lucky for me, they even had a [2017 blog post](https://www.twilio.com/blog/2017/03/google-spreadsheets-and-javascriptnode-js.html) on how to update Google Spreadsheets using Node.js! 
 
-I pretty followed their instructions to set up the Google Spreadsheet updating functionality for this survey app. All I really did was change the name of the .json credentials file to *google_spreadsheet.json*, get the ID of the Google Spreadsheet I wanted to use and wrap the google-spreadsheet function calls I used into async steps using the 'async' NPM package.
+I followed their instructions to set up the Google Spreadsheet updating functionality for this survey app. All I needed to do was change the name of the .json credentials file to *google_spreadsheet.json*, get the ID of the Google Spreadsheet I wanted to use and wrap the google-spreadsheet function calls into async steps using the 'async' NPM package.
 
-The only other tricky thing to keep in mind is make sure that the key names of the object you send to the addRow function match exactly with the header names in your Google Spreadsheet. That being said, I wasted a lot of time troubleshooting callback errors in the `google-spreadsheet` package because I mixed up function calls between a 'document' and a 'sheet', so uhhh don't do that.
+The only other tricky thing to keep in mind is make sure that the key names of the object you send to the addRow function match exactly with the header names in your Google Spreadsheet. I also wasted a lot of time troubleshooting callback errors in the `google-spreadsheet` package because I mixed up function calls between a 'document' and a 'sheet' so don't do that either!
 
 Assuming you've got your row update object key names right, your credential file all lined up and the right Google Spreadsheet ID, you should be good to go! You could test this part using direct function calls, or you can test it once you get the Node.js app server up and running.
 
 # Running Locally (without Twilio)
 To run this service locally, just do the standard...
 
+`npm install`
 `node app.js`
 
 Running locally at first is helpful to troubleshoot the sequencing of survey questions and responses without having to go through Twilio each time.  You can test it out by sending POST HTTP requests to localhost:[PORT] using curl or an API manager like Postman or Insomnia. 
