@@ -28,7 +28,7 @@ To setup SurveyBot, you'll need to do the following...
 }
 `
 
-* Create a *google_spreadsheet_credentials.json* file (see below)
+* In the *app* folder, create a *google_spreadsheet_credentials.json* file (see below)
 * Set up a Twilio account, get a phone number and create a TwiML app
 * Follow the instructions below!
 
@@ -46,7 +46,7 @@ The only other tricky thing to keep in mind is make sure that the key names of t
 Assuming you've got your row update object key names right, your credential file all lined up and the right Google Spreadsheet ID, you should be good to go! You could test this part using direct function calls, or you can test it once you get the Node.js app server up and running.
 
 # Running Locally (without Twilio)
-To run this service locally, just do the standard...
+To run this service locally, just run the standard in the *app* folder:
 
 `npm install`
 `node app.js`
