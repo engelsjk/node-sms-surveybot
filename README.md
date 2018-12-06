@@ -1,8 +1,6 @@
 # node-sms-surveybot
 This was a one-day challenge to build out a service that sends out custom SMS surveys and uploads responses to Google Spreadsheets using Node, Twilio and ngrok/AWS. It builds on my love for all things SMS and Twilio, with some prior experience of building out simple Node.js/Express services. 
 
-![](images/surveybot.png)
-
 # Introduction
 I was challenged by my partner to find a way to record survey questions for users in a workplace situation, to help someone trying to find their way around or not being able to find something. 
 
@@ -11,7 +9,11 @@ The scope of the project was to build out an automated survey system that would 
 Oddly enough, this was my second mini-project prototyping an automated service in the field of workplace design, the [first one]([](https://github.com/engelsjk/web-demo-density-rooms)) being a web app showing data of room occupancy using the [density.io](https://www.density.io/) API. 
 
 # SurveyBot
-Enter SurveyBot! It's a Node.js/Express app that sends survey questions as SMS messages using Twilio and then records responses in a Google Spreadsheet. To keep track of where it is in a conversation flow and send the right questions and record the corresponding answers, it uses Express sessions and a (painfully) simple message counter. 
+Enter SurveyBot! 
+
+<img src="images/surveybot.png" width="300"/>
+
+It's a Node.js/Express app that sends survey questions as SMS messages using Twilio and then records responses in a Google Spreadsheet. To keep track of where it is in a conversation flow and send the right questions and record the corresponding answers, it uses Express sessions and a simple message counter. 
 
 The idea here is that you could deploy a really simple automated survey system with relatively little overhead. While there are paid services out there that do this, this is for people who want to go the simple, quick and custom route.
 
