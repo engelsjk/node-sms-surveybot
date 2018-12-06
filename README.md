@@ -82,7 +82,7 @@ Running locally with ngrok is great and all, but it won't work if you're looking
 
 Luckily, I found that this Medium write-up was very thorough in helping me get this Node.js app up and running on EC2! 
 
-[Setting up a Node.js app on a Linux AMI on an AWS EC2 instance with Nginx](https://medium.com/@nishankjaintdk/setting-up-a-node-js-app-on-a-linux-ami-on-an-aws-ec2-instance-with-nginx-59cbc1bcc68c))
+[Setting up a Node.js app on a Linux AMI on an AWS EC2 instance with Nginx](https://medium.com/@nishankjaintdk/setting-up-a-node-js-app-on-a-linux-ami-on-an-aws-ec2-instance-with-nginx-59cbc1bcc68c)
 
 Once you've got your app running on a publically-exposed EC2 instance, you can test it out again using curl or Postman. 
 
