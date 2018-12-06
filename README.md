@@ -49,7 +49,7 @@ The only other tricky thing to keep in mind is make sure that the key names of t
 
 Assuming you've got your row update object key names right, your credential file all lined up and the right Google Spreadsheet ID, you should be good to go! You could test this part using direct function calls, or you can test it once you get the Node.js app server up and running.
 
-As you start interacting with SurveyBot, the Spreadsheet should automatically started updating with user responses to each of the survey questions.
+As you start interacting with SurveyBot, the Spreadsheet should automatically start updating with user responses to each of the survey questions, adding a new row for every response.
 
 ![](images/survey-data.png)
 
