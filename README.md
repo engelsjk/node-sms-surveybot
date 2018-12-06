@@ -1,6 +1,8 @@
 # node-sms-surveybot
 This was a one-day challenge to build out a service that sends out custom SMS surveys and uploads responses to Google Spreadsheets using Node, Twilio and ngrok/AWS. It builds on my love for all things SMS and Twilio, with some prior experience of building out simple Node.js/Express services. 
 
+![](images/surveybot.png)
+
 # Introduction
 I was challenged by my partner to find a way to record survey questions for users in a workplace situation, to help someone trying to find their way around or not being able to find something. 
 
@@ -32,7 +34,7 @@ To setup SurveyBot, you'll need to do the following...
 * Set up a Twilio account, get a phone number and create a TwiML app
 * Follow the instructions below!
 
-Other than that, you can customize the survey questions, data you want recorded in the Google Spreadsheet, etc but that requires a bit more editing of code. If you want to stick to a two question survey and only record the question and answer in your spreadsheet, you can just edit the copy text in *custom_message.json*. Beyond that, you'll have to start changing code in *app.js* and *spreadsheet.js*. 
+Other than that, you can customize the survey questions, the data you want recorded in the Google Spreadsheet, etc but that requires a bit more editing of code. If you want to stick to a two question survey and only record the question and answer in your spreadsheet, you can just edit the copy text in *custom_message.json*. Beyond that, you'll have to start changing code in *app.js* and *spreadsheet.js*. 
 
 For more information on how Google Spreadsheet editing was incorporated, how to run this Node.js app (locally, using ngrok and then on AWS EC2), and how to get it set up on Twilio, see below!
 
@@ -44,6 +46,10 @@ I followed their instructions to set up the Google Spreadsheet updating function
 The only other tricky thing to keep in mind is make sure that the key names of the object you send to the addRow function match exactly with the header names in your Google Spreadsheet. I also wasted a lot of time troubleshooting callback errors in the `google-spreadsheet` package because I mixed up function calls between a 'document' and a 'sheet' so don't do that either!
 
 Assuming you've got your row update object key names right, your credential file all lined up and the right Google Spreadsheet ID, you should be good to go! You could test this part using direct function calls, or you can test it once you get the Node.js app server up and running.
+
+As you start interacting with SurveyBot, the Spreadsheet should automatically started updating with user responses to each of the survey questions.
+
+![](images/survey-data.png)
 
 # Running Locally (without Twilio)
 To run this service locally, just run the standard in the *app* folder:
